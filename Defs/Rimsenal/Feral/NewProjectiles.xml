@@ -1,0 +1,21 @@
+<Defs>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Bullet_ScatterCannon</defName>
+        <label>shrapnel</label>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>90</damageAmountBase>
+            <speed>55</speed>
+        </projectile>
+        <modExtensions>
+            <li Class="ProperShotguns.ShotgunExtension">
+                <pelletCount>10</pelletCount>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+</Defs>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Merp's Shotgun Pack [1.0]</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+                <!-- projectiles -->
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>*/ThingDef[defName="Bullet_DualWieldShotgun" or defName="Bullet_SpasTwelve"]</xpath>
+                    <value>
+                        <li Class="ProperShotguns.ShotgunExtension">
+                            <pelletCount>6</pelletCount>
+                        </li>
+                    </value>
+                </li>
+
+                <!-- textures -->
+                <li Class="PatchOperationReplace">
+                    <xpath>*/ThingDef[defName="Bullet_DualWieldShotgun" or defName="Bullet_SpasTwelve"]/graphicData/texPath</xpath>
+                    <value>
+                        <texPath>Things/Projectile/Bullet_Small</texPath>
+                    </value>
+                </li>
+
+                <!-- verbs -->
+                <li Class="PatchOperationReplace">
+                    <xpath>*/ThingDef[defName="Gun_Doublebarrel" or defName="Gun_DualWieldShotgun" or defName="Gun_AATwelve"
+                    or defName="Gun_SpasTwelve" or defName="Gun_StrikerRim"]/verbs/li/verbClass</xpath>
+                    <value>
+                        <verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
+                    </value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+
+</Patch>

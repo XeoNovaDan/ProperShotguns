@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>[XND] Proper Shotguns</name>
+	<author>XeoNovaDan</author>
+	<url>https://ludeon.com/forums/index.php?topic=29503.0</url>
+	<targetVersion>0.19.0</targetVersion>
+	<description>Pump shotguns and chain shotguns will fire actual buckshots rather than single slug-like shots.</description>
+</ModMetaData>

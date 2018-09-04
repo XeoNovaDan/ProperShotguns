@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- gosh, I hate working with XML sometimes -->
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Rimsenal</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+
+                <!-- general verb patching -->
+                <li Class="PatchOperationReplace">
+                    <xpath>*/ThingDef[defName="GD_BSLauncher" or defName="JI_Fafnir" or defName="YP_SagPung"]/verbs/li/verbClass</xpath>
+                    <value>
+                        <verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
+                    </value>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>*/ThingDef[defName="GD_BSLauncher" or defName="JI_Fafnir" or defName="YP_SagPung"]/verbs/li/burstShotCount</xpath>
+                </li>
+
+                <!-- ===== GD Buckshot Launcher ===== -->
+                <!-- projectile -->
+                <li Class="PatchOperationReplace">
+                    <xpath>*/ThingDef[defName="Bullet_BSLauncher"]/projectile/damageAmountBase</xpath>
+                    <value>
+                        <damageAmountBase>40</damageAmountBase>
+                    </value>
+                </li>
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>*/ThingDef[defName="Bullet_BSLauncher"]</xpath>
+                    <value>
+                        <li Class="ProperShotguns.ShotgunExtension">
+                            <pelletCount>5</pelletCount>
+                        </li>
+                    </value>
+                </li>
+
+                <!-- ===== JI Siege Shotgun ===== -->
+                <!-- projectile -->
+                <li Class="PatchOperationReplace">
+                    <xpath>*/ThingDef[defName="Bullet_Fafnir"]/projectile/damageAmountBase</xpath>
+                    <value>
+                        <damageAmountBase>39</damageAmountBase>
+                    </value>
+                </li>
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>*/ThingDef[defName="Bullet_Fafnir"]</xpath>
+                    <value>
+                        <li Class="ProperShotguns.ShotgunExtension">
+                            <pelletCount>3</pelletCount>
+                        </li>
+                    </value>
+                </li>
+
+                <!-- ===== YP Swarmer ===== -->
+                <!-- projectile -->
+                <li Class="PatchOperationReplace">
+                    <xpath>*/ThingDef[defName="Bullet_SagPung"]/projectile/damageAmountBase</xpath>
+                    <value>
+                        <damageAmountBase>28</damageAmountBase>
+                    </value>
+                </li>
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>*/ThingDef[defName="Bullet_SagPung"]</xpath>
+                    <value>
+                        <li Class="ProperShotguns.ShotgunExtension">
+                            <pelletCount>4</pelletCount>
+                        </li>
+                    </value>
+                </li>
+
+            </operations>
+        </match>
+    </Operation>
+
+</Patch>

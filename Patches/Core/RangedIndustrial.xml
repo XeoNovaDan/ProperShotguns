@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- Damage amount is handled in a Harmony patch -->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>*/ThingDef[defName="Bullet_Shotgun"]</xpath>
+        <value>
+            <li Class="ProperShotguns.ShotgunExtension">
+                <pelletCount>6</pelletCount>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Bullet_Shotgun"]/graphicData/texPath</xpath>
+        <value>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>*/ThingDef[defName="Gun_PumpShotgun" or defName="Gun_ChainShotgun"]/verbs/li/verbClass</xpath>
+        <value>
+            <verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
+        </value>
+    </Operation>
+
+</Patch>

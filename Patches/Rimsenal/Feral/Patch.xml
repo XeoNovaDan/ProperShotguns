@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- gosh, I hate working with XML sometimes -->
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Rimsenal - Feral</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+
+                <!-- general verb patching -->
+                <li Class="PatchOperationReplace">
+                    <xpath>*/ThingDef[defName="Gun_ScatterStick" or defName="Feral_ScatterCannon"]/verbs/li/verbClass</xpath>
+                    <value>
+                        <verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
+                    </value>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>*/ThingDef[defName="Gun_ScatterStick" or defName="Feral_ScatterCannon"]/verbs/li/burstShotCount</xpath>
+                </li>
+
+                <!-- ===== Feral Scattergun ===== -->
+                <!-- projectile -->
+                <li Class="PatchOperationReplace">
+                    <xpath>*/ThingDef[defName="Bullet_ScatterStick" or defName="Feral_ScatterCannon"]/projectile/damageAmountBase</xpath>
+                    <value>
+                        <damageAmountBase>36</damageAmountBase>
+                    </value>
+                </li>
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>*/ThingDef[defName="Bullet_ScatterStick"]</xpath>
+                    <value>
+                        <li Class="ProperShotguns.ShotgunExtension">
+                            <pelletCount>4</pelletCount>
+                        </li>
+                    </value>
+                </li>
+
+                <!-- ===== Scatter Cannon - now this was an interesting one ===== -->
+                <li Class="PatchOperationReplace">
+                    <xpath>*/ThingDef[defName="Feral_ScatterCannon"]/verbs/li/defaultProjectile</xpath>
+                    <value>
+                        <defaultProjectile>Bullet_ScatterCannon</defaultProjectile>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>*/ThingDef[defName="Bullet_ScatterCannon"]/graphicData</xpath>
+                    <value>
+                        <texPath>Projectile/Scrap</texPath>
+                    </value>
+                </li>
+
+            </operations>
+        </match>
+    </Operation>
+
+</Patch>
