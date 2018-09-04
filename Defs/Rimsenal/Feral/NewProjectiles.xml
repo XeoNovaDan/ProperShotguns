@@ -3,9 +3,7 @@
     <ThingDef ParentName="BaseBullet">
         <defName>Bullet_ScatterCannon</defName>
         <label>shrapnel</label>
-        <graphicData>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
+        <ignoreConfigErrors>true</ignoreConfigErrors>
         <projectile>
             <damageDef>Bullet</damageDef>
             <damageAmountBase>90</damageAmountBase>

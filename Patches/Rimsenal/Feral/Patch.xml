@@ -47,9 +47,12 @@
                     </value>
                 </li>
                 <li Class="PatchOperationAdd">
-                    <xpath>*/ThingDef[defName="Bullet_ScatterCannon"]/graphicData</xpath>
+                    <xpath>*/ThingDef[defName="Bullet_ScatterCannon"]</xpath>
                     <value>
-                        <texPath>Projectile/Scrap</texPath>
+                        <graphicData>
+                            <texPath>Projectile/Scrap</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                        </graphicData>
                     </value>
                 </li>
 
