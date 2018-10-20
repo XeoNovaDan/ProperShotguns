@@ -3,7 +3,7 @@
 
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-		  <li>Weapon Tech B19</li>
+		  <li>Weapon Tech</li>
 		</mods>
 		<match Class="PatchOperationSequence">
 			<success>Always</success>
