@@ -9,7 +9,7 @@
 			<success>Always</success>
 			<operations>
 				<li Class="PatchOperationAddModExtension">
-					<xpath>*/ThingDef[defName="Bullet_12g"]</xpath>
+					<xpath>/Defs/ThingDef[defName="Bullet_12g"]</xpath>
 					<value>
 						<li Class="ProperShotguns.ShotgunExtension">
 							<pelletCount>6</pelletCount>
@@ -17,13 +17,13 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>*/ThingDef[defName="Bullet_12g"]/graphicData/texPath</xpath>
+					<xpath>/Defs/ThingDef[defName="Bullet_12g"]/graphicData/texPath</xpath>
 					<value>
 						<texPath>Things/Projectile/Bullet_Small</texPath>
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
-					<xpath>*/ThingDef[defName="Gun_SawnOffShotgun" or defName="Gun_SemiAutomaticShotgun" or defName="Gun_DoubleBarrelShotgun"]/verbs/li/verbClass</xpath>
+					<xpath>/Defs/ThingDef[defName="Gun_SawnOffShotgun" or defName="Gun_SemiAutomaticShotgun" or defName="Gun_DoubleBarrelShotgun"]/verbs/li/verbClass</xpath>
 					<value>
 						<verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
 					</value>

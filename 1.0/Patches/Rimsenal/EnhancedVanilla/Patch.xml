@@ -13,25 +13,25 @@
 
                 <!-- general verb patching -->
                 <li Class="PatchOperationReplace">
-                    <xpath>*/ThingDef[defName="Gun_ScatterCharger"]/verbs/li/verbClass</xpath>
+                    <xpath>/Defs/ThingDef[defName="Gun_ScatterCharger"]/verbs/li/verbClass</xpath>
                     <value>
                         <verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
                     </value>
                 </li>
                 <li Class="PatchOperationRemove">
-                    <xpath>*/ThingDef[defName="Gun_ScatterCharger"]/verbs/li/burstShotCount</xpath>
+                    <xpath>/Defs/ThingDef[defName="Gun_ScatterCharger"]/verbs/li/burstShotCount</xpath>
                 </li>
 
                 <!-- ===== Scatter Charger ===== -->
                 <!-- projectile -->
                 <li Class="PatchOperationReplace">
-                    <xpath>*/ThingDef[defName="Bullet_ScatterCharger"]/projectile/damageAmountBase</xpath>
+                    <xpath>/Defs/ThingDef[defName="Bullet_ScatterCharger"]/projectile/damageAmountBase</xpath>
                     <value>
                         <damageAmountBase>40</damageAmountBase>
                     </value>
                 </li>
                 <li Class="PatchOperationAddModExtension">
-                    <xpath>*/ThingDef[defName="Bullet_ScatterCharger"]</xpath>
+                    <xpath>/Defs/ThingDef[defName="Bullet_ScatterCharger"]</xpath>
                     <value>
                         <li Class="ProperShotguns.ShotgunExtension">
                             <pelletCount>4</pelletCount>

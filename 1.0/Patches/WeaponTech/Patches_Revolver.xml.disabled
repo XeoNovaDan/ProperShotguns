@@ -5,17 +5,17 @@
 	  <success>Always</success>
 	  <operations>
 	    <li Class="PatchOperationTest">
-	      <xpath>*/ThingDef[defName = "Gun_Revolver"]/weaponTags</xpath> <!-- assumes that if WeaponTags has anything in it, it has the Revolver tag. Fails silently so doesn't ultimately matter. -->
+	      <xpath>/Defs/ThingDef[defName = "Gun_Revolver"]/weaponTags</xpath> <!-- assumes that if WeaponTags has anything in it, it has the Revolver tag. Fails silently so doesn't ultimately matter. -->
 		  <success>Invert</success>
 	    </li>
 		<li Class="PatchOperationAdd">
-		  <xpath>*/ThingDef[defName = "Gun_Revolver"]</xpath>
+		  <xpath>/Defs/ThingDef[defName = "Gun_Revolver"]</xpath>
 		  <value>
 			<weaponTags/>
 		  </value>
 		</li>	
 		<li Class="PatchOperationAdd">
-		  <xpath>*/ThingDef[defName = "Gun_Revolver"]/weaponTags</xpath>
+		  <xpath>/Defs/ThingDef[defName = "Gun_Revolver"]/weaponTags</xpath>
 		  <value>
 			<li>Revolver</li> <!-- fixes a problem where the Strangers in Black had no weapon options due to Janson overriding the Revolver def instead of using xpath patching -->
 		  </value>
