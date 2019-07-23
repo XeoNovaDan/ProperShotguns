@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>	<!--===== Credits and thanks to dninemfive, mah boiyeee. He made this. ======-->
+	<Operation Class="PatchOperationSequence">
+	  <success>Always</success>
+	  <operations>
+	    <li Class="PatchOperationTest">
+	      <xpath>/Defs/ThingDef[defName = "RNBullet_12Gauge_Shotgun"]</xpath>
+	    </li>
+		<li Class="PatchOperationAddModExtension">
+			<xpath>/Defs/ThingDef[defName="RNBullet_12Gauge_Shotgun"]</xpath>
+			<value>
+				<li Class="ProperShotguns.ShotgunExtension">
+					<pelletCount>6</pelletCount>
+				</li>
+			</value>
+		</li>
+		<li Class="PatchOperationAddModExtension">
+			<xpath>/Defs/ThingDef[defName="RNBullet_23x75mmR_Shotgun"]</xpath>
+			<value>
+				<li Class="ProperShotguns.ShotgunExtension">
+					<pelletCount>8</pelletCount>
+				</li>
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName = "RNBullet_12Gauge_Shotgun" or defName="RNBullet_23x75mmR_Shotgun"]/graphicData/texPath</xpath>
+			<value>
+				<texPath>Things/Projectile/Bullet_Small</texPath>
+			</value>
+		</li>
+	  </operations>
+	</Operation>
+	<Operation Class="PatchOperationSequence">
+	  <success>Always</success>
+	  <operations>
+		<li Class="PatchOperationTest">
+		  <xpath>/Defs/ThingDef[defName = "RNGun_AA12S"]</xpath>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="RNGun_AA12S" or defName="RNGun_SawedOff" or defName="RNGun_KS23S" or defName="RNGun_KSGS" or defName="RNGun_Model1887LA" or defName="RNGun_Model1897S" or defName="RNGun_Mossberg500S" or defName="RNGun_Mossberg500TacticalS" or defName="RNGun_KS23S" or defName="RNGun_Remington870S" or defName="RNGun_Remington870MagnumS" or defName="RNGun_Remington870TacticalS" or defName="RNGun_Saiga12S" or defName="RNGun_SuperShorty" or defName="RNGun_SPAS12S" or defName="RNGun_Supernova" or defName="RNGun_USAS12S" or defName="RNGun_UTS15S" or defName="RNGun_M1014S" or defName="RNGun_UTS15S" or defName="RNGun_UTS15S" or defName="RNGun_UTS15S" or defName="RNGun_Remington870HRT"]/verbs/li/verbClass</xpath>
+			<value>
+				<verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
+			</value>
+		</li>
+	  </operations>
+	</Operation>
+</Patch>

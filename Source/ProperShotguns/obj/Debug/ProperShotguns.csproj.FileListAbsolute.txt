@@ -2,3 +2,7 @@ E:\Documents\My RimWorld Mods\ProperShotguns\Source\ProperShotguns\obj\Debug\Pro
 E:\Documents\My RimWorld Mods\ProperShotguns\Source\ProperShotguns\obj\Debug\ProperShotguns.csproj.CoreCompileInputs.cache
 E:\Documents\My RimWorld Mods\ProperShotguns\Assemblies\ProperShotguns.dll
 E:\Documents\My RimWorld Mods\ProperShotguns\Source\ProperShotguns\obj\Debug\ProperShotguns.dll
+E:\Documents\GitHub\ProperShotguns\1.0\Assemblies\ProperShotguns.dll
+E:\Documents\GitHub\ProperShotguns\Source\ProperShotguns\obj\Debug\ProperShotguns.csprojAssemblyReference.cache
+E:\Documents\GitHub\ProperShotguns\Source\ProperShotguns\obj\Debug\ProperShotguns.csproj.CoreCompileInputs.cache
+E:\Documents\GitHub\ProperShotguns\Source\ProperShotguns\obj\Debug\ProperShotguns.dll
