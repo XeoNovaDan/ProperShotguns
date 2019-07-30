@@ -51,6 +51,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HarmonyPatches\Patch_Pawn_MindState.cs" />
     <Compile Include="HarmonyPatches\Patch_Projectile.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="ListingStandardHelper.cs" />
