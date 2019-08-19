@@ -51,6 +51,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comps\CompProjectileVerbCache.cs" />
     <Compile Include="HarmonyPatches\Patch_Pawn_MindState.cs" />
     <Compile Include="HarmonyPatches\Patch_Projectile.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="ProperShotguns.cs" />
     <Compile Include="ProperShotgunsSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShotgunExtension - Copy.cs" />
     <Compile Include="ShotgunExtension.cs" />
     <Compile Include="Verb_ShootShotgun.cs" />
   </ItemGroup>

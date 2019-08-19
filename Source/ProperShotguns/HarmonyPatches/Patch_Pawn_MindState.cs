@@ -18,9 +18,8 @@ namespace ProperShotguns
 	static class Patch_Pawn_MindState
     {
 
-        [HarmonyPatch(typeof(Pawn_MindState))]
-        [HarmonyPatch("CanStartFleeingBecauseOfPawnAction")]
-        static class Patch_CanStartFleeingBecauseOfPawnAction
+        [HarmonyPatch(typeof(Pawn_MindState), "CanStartFleeingBecauseOfPawnAction")]
+        static class CanStartFleeingBecauseOfPawnAction
         {
 
             public static void Postfix(Pawn p, ref bool __result)
