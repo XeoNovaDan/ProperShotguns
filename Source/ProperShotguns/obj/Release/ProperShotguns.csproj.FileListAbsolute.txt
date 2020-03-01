@@ -1,0 +1,3 @@
+D:\RimWorld Mods\ProperShotguns\1.1\Assemblies\ProperShotguns.dll
+D:\RimWorld Mods\ProperShotguns\Source\ProperShotguns\obj\Release\ProperShotguns.csprojAssemblyReference.cache
+D:\RimWorld Mods\ProperShotguns\Source\ProperShotguns\obj\Release\ProperShotguns.dll

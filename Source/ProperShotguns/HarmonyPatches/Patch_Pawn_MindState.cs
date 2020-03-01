@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using RimWorld;
 using Verse;
 using Verse.AI;
-using Harmony;
+using HarmonyLib;
 using UnityEngine;
 
 namespace ProperShotguns

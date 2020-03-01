@@ -8,7 +8,7 @@ using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using RimWorld;
 using Verse;
-using Harmony;
+using HarmonyLib;
 using UnityEngine;
 
 namespace ProperShotguns
@@ -19,7 +19,7 @@ namespace ProperShotguns
 
 		static HarmonyPatches()
 		{
-			var h = HarmonyInstance.Create("XeoNovaDan.ProperShotguns");
+			var h = new Harmony("XeoNovaDan.ProperShotguns");
             h.PatchAll();
         }
 

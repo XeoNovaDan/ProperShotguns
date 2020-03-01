@@ -6,3 +6,6 @@ E:\Documents\GitHub\ProperShotguns\1.0\Assemblies\ProperShotguns.dll
 E:\Documents\GitHub\ProperShotguns\Source\ProperShotguns\obj\Debug\ProperShotguns.csprojAssemblyReference.cache
 E:\Documents\GitHub\ProperShotguns\Source\ProperShotguns\obj\Debug\ProperShotguns.csproj.CoreCompileInputs.cache
 E:\Documents\GitHub\ProperShotguns\Source\ProperShotguns\obj\Debug\ProperShotguns.dll
+D:\RimWorld Mods\ProperShotguns\Source\ProperShotguns\obj\Debug\ProperShotguns.csprojAssemblyReference.cache
+D:\RimWorld Mods\ProperShotguns\Source\ProperShotguns\obj\Debug\ProperShotguns.dll
+D:\RimWorld Mods\ProperShotguns\1.1\Assemblies\ProperShotguns.dll
