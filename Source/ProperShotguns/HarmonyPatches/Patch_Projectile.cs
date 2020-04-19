@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using RimWorld;
 using Verse;
 using Verse.AI;
-using Harmony;
+using HarmonyLib;
 using UnityEngine;
 
 namespace ProperShotguns
@@ -19,27 +19,43 @@ namespace ProperShotguns
 	{
 
         [HarmonyPatch(typeof(Projectile), nameof(Projectile.DamageAmount), MethodType.Getter)]
-        static class get_DamageAmount
+        public static class get_DamageAmount
         {
 
-            public static void Postfix(Projectile __instance, ThingDef ___equipmentDef, ref int __result)
+            public static void Postfix(Projectile __instance, ref int __result)
             {
                 var verbCache = __instance.TryGetComp<CompProjectileVerbCache>();
                 if (verbCache != null && verbCache.cachedVerbClass is Type t && t.IsAssignableFrom(typeof(Verb_ShootShotgun)))
                 {
-                    var shotgunExtension = __instance.def.GetModExtension<ShotgunExtension>() ?? ShotgunExtension.defaultValues;
+                    var shotgunExtension = ShotgunExtension.Get(__instance.def);
                     float adjustedDamage = (float)__result / shotgunExtension.pelletCount;
-                    if (ProperShotgunsSettings.damageRoundMode == ProperShotgunsSettings.StandardDamageRoundModeString)
-                        __result = Mathf.RoundToInt(adjustedDamage);
-                    else
-                        __result = GenMath.RoundRandom(adjustedDamage);
+
+                    // Determine pellet damage
+                    switch(ProperShotgunsSettings.damageRoundMode)
+                    {
+                        case ShotgunDamageRoundMode.Standard:
+                            __result = Mathf.RoundToInt(adjustedDamage);
+                            break;
+                        case ShotgunDamageRoundMode.Random:
+                            __result = GenMath.RoundRandom(adjustedDamage);
+                            break;
+                        case ShotgunDamageRoundMode.Ceil:
+                            __result = Mathf.CeilToInt(adjustedDamage);
+                            break;
+                        case ShotgunDamageRoundMode.Floor:
+                            __result = Mathf.FloorToInt(adjustedDamage);
+                            break;
+                        default:
+                            throw new NotImplementedException();
+                    }
                 }
             }
 
         }
 
-        [HarmonyPatch(typeof(Projectile), nameof(Projectile.Launch), new Type[] { typeof(Thing), typeof(Vector3), typeof(LocalTargetInfo), typeof(LocalTargetInfo), typeof(ProjectileHitFlags), typeof(Thing), typeof(ThingDef) })]
-        static class Launch
+        [HarmonyPatch(typeof(Projectile), nameof(Projectile.Launch),
+            new Type[] { typeof(Thing), typeof(Vector3), typeof(LocalTargetInfo), typeof(LocalTargetInfo), typeof(ProjectileHitFlags), typeof(Thing), typeof(ThingDef) })]
+        public static class Launch
         {
 
             public static void Postfix(Projectile __instance, Thing launcher)

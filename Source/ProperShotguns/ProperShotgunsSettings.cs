@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -7,34 +8,37 @@ namespace ProperShotguns
 	public class ProperShotgunsSettings : ModSettings
 	{
 
-        public const string StandardDamageRoundModeString = "    Standard";
-        public const string RandomDamageRoundModeString = "    Random";
-
         public void DoWindowContents(Rect wrect)
 		{
-			Listing_Standard listing_Standard = new Listing_Standard();
-			Color color = GUI.color;
-			listing_Standard.Begin(wrect);
+			var options = new Listing_Standard();
+			var color = GUI.color;
+			options.Begin(wrect);
+
 			GUI.color = color;
 			Text.Font = GameFont.Small;
 			Text.Anchor = TextAnchor.UpperLeft;
-			listing_Standard.Gap(12f);
-			listing_Standard.AddLabeledRadioList(Translator.Translate("DamageRoundingMode"), damageRoundModes, ref damageRoundMode, null);
-			listing_Standard.End();
+			options.Gap();
+
+			options.Label("ProperShotguns.ShotgunDamageRounding".Translate());
+			var shotgunDamageRoundingOpts = Enum.GetValues(typeof(ShotgunDamageRoundMode)).Cast<ShotgunDamageRoundMode>().ToList();
+			for (int i = 0; i < shotgunDamageRoundingOpts.Count; i++)
+			{
+				var curOpt = shotgunDamageRoundingOpts[i];
+				if (options.RadioButton($"ProperShotguns.ShotgunDamageRounding_{curOpt}".Translate(), damageRoundMode == curOpt, 12,
+					$"ProperShotguns.ShotgunDamageRounding_{curOpt}_Desc".Translate()))
+					damageRoundMode = curOpt;
+			}
+
+			options.End();
 			base.Mod.GetSettings<ProperShotgunsSettings>().Write();
 		}
 
 		public override void ExposeData()
 		{
-			Scribe_Values.Look(ref damageRoundMode, "damageRoundMode", StandardDamageRoundModeString, false);
+			Scribe_Values.Look(ref damageRoundMode, "damageRoundMode", ShotgunDamageRoundMode.Random);
 		}
 
-		public static string damageRoundMode = StandardDamageRoundModeString;
+		public static ShotgunDamageRoundMode damageRoundMode = ShotgunDamageRoundMode.Random;
 
-		private static string[] damageRoundModes = new string[]
-		{
-            StandardDamageRoundModeString,
-            RandomDamageRoundModeString
-        };
 	}
 }

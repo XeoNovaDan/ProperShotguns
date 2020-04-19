@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>[XND] Proper Shotguns</name>
+	<description>Pump shotguns and chain shotguns will fire actual buckshots rather than single slug-like shots.</description>
 	<author>XeoNovaDan</author>
-	<url>https://ludeon.com/forums/index.php?topic=29503.0</url>
+	<packageId>XeoNovaDan.ProperShotguns</packageId>
+	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=1438488634</url>
 	<supportedVersions>
 		<li>1.0</li>
+		<li>1.1</li>
 	</supportedVersions>
-	<description>Pump shotguns and chain shotguns will fire actual buckshots rather than single slug-like shots.</description>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+		</li>
+    </modDependencies>
+    <loadAfter>
+        <li>Ludeon.RimWorld</li>
+        <li>Ludeon.RimWorld.Royalty</li>
+        <li>brrainz.harmony</li>
+    </loadAfter>
 </ModMetaData>

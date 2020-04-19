@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Weapons Expanded - Laser</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+
+                <!-- general verb patching -->
+                <li Class="PatchOperationReplace">
+                    <xpath>/Defs/ThingDef[defName="VWEL_Gun_LaserShotgun" or defName="VWEL_Gun_SalvagedLaserShotgun"]/verbs/li/verbClass</xpath>
+                    <value>
+                        <verbClass>ProperShotguns.Verb_ShootShotgun</verbClass>
+                    </value>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>/Defs/ThingDef[defName="VWEL_Gun_LaserShotgun" or defName="VWEL_Gun_SalvagedLaserShotgun"]/verbs/li/burstShotCount</xpath>
+                </li>
+
+                <!-- projectile patching -->
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>/Defs/ThingDef[defName="VWEL_Bullet_LaserShotgun" or defName="VWEL_Bullet_SalvagedLaserShotgun"]</xpath>
+                    <value>
+                        <li Class="ProperShotguns.ShotgunExtension">
+                            <pelletCount>4</pelletCount>
+                        </li>
+                    </value>
+                </li>
+
+                <!-- ===== Laser Shotgun ===== -->
+                <li Class="PatchOperationReplace">
+                    <xpath>/Defs/ThingDef[defName="VWEL_Bullet_LaserShotgun"]/projectile/damageAmountBase</xpath>
+                    <value>
+                        <damageAmountBase>28</damageAmountBase>
+                    </value>
+                </li>
+
+                <!-- ===== Salvaged Laser Shotgun ===== -->
+                <li Class="PatchOperationReplace">
+                    <xpath>/Defs/ThingDef[defName="VWEL_Bullet_SalvagedLaserShotgun"]/projectile/damageAmountBase</xpath>
+                    <value>
+                        <damageAmountBase>16</damageAmountBase>
+                    </value>
+                </li>
+
+            </operations>
+        </match>
+    </Operation>
+
+</Patch>

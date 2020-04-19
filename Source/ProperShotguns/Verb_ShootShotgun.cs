@@ -27,7 +27,7 @@ namespace ProperShotguns
             if (castedShot && CasterIsPawn)
                 CasterPawn.records.Increment(RecordDefOf.ShotsFired);
 
-			ShotgunExtension shotgunExtension = verbProps.defaultProjectile.GetModExtension<ShotgunExtension>() ?? ShotgunExtension.defaultValues;
+            var shotgunExtension = ShotgunExtension.Get(verbProps.defaultProjectile);
 			if (castedShot && shotgunExtension.pelletCount - 1 > 0)
 			{
 				for (int i = 0; i < shotgunExtension.pelletCount - 1; i++)

@@ -14,14 +14,13 @@ using UnityEngine;
 namespace ProperShotguns
 {
 
-	[StaticConstructorOnStartup]
-	public static class HarmonyPatches
+	public enum ShotgunDamageRoundMode
 	{
 
-		static HarmonyPatches()
-		{
-            ProperShotguns.harmonyInstance.PatchAll();
-        }
+		Random,
+		Standard,
+		Floor,
+		Ceil
 
 	}
 

@@ -9,17 +9,17 @@ using System.Runtime.CompilerServices;
 using RimWorld;
 using Verse;
 using Verse.AI;
-using Harmony;
+using HarmonyLib;
 using UnityEngine;
 
 namespace ProperShotguns
 {
 
-	static class Patch_Pawn_MindState
+    public static class Patch_Pawn_MindState
     {
 
         [HarmonyPatch(typeof(Pawn_MindState), "CanStartFleeingBecauseOfPawnAction")]
-        static class CanStartFleeingBecauseOfPawnAction
+        public static class CanStartFleeingBecauseOfPawnAction
         {
 
             public static void Postfix(Pawn p, ref bool __result)

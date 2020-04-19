@@ -1,32 +1,16 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using Verse;
-using RimWorld;
 
 namespace ProperShotguns
 {
-	
-    [StaticConstructorOnStartup]
-    public static class StaticConstructorClass
-    {
+	public class ShotgunExtension : DefModExtension
+	{
 
-        static StaticConstructorClass()
-        {
+		private static readonly ShotgunExtension defaultValues = new ShotgunExtension();
 
-            foreach (var tDef in DefDatabase<ThingDef>.AllDefs)
-            {
-                // Add verb caches to all projectile defs
-                if (typeof(Projectile).IsAssignableFrom(tDef.thingClass))
-                {
-                    if (tDef.comps == null)
-                        tDef.comps = new List<CompProperties>();
-                    tDef.comps.Add(new CompProperties(typeof(CompProjectileVerbCache)));
-                }
-            }
+		public static ShotgunExtension Get(Def def) => def.GetModExtension<ShotgunExtension>() ?? defaultValues;
 
-        }
+		public int pelletCount = 1;
 
-    }
-
+	}
 }

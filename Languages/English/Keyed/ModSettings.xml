@@ -1,6 +1,15 @@
 <LanguageData>
 
-    <ProperShotgunsSettingsCategory>Proper Shotguns</ProperShotgunsSettingsCategory>
-    <DamageRoundingMode>Damage Rounding Mode</DamageRoundingMode>
+    <ProperShotguns.SettingsCategory>Proper Shotguns</ProperShotguns.SettingsCategory>
+
+    <ProperShotguns.ShotgunDamageRounding>Shotgun pellet damage rounding</ProperShotguns.ShotgunDamageRounding>
+    <ProperShotguns.ShotgunDamageRounding_Random>Random</ProperShotguns.ShotgunDamageRounding_Random>
+    <ProperShotguns.ShotgunDamageRounding_Random_Desc>Pellet damage will randomly be rounded up or down depending on decimal value - 3.7 has a 70% chance of being rounded up to 4, and a 30% chance of being rounded down to 3.</ProperShotguns.ShotgunDamageRounding_Random_Desc>
+    <ProperShotguns.ShotgunDamageRounding_Standard>Standard</ProperShotguns.ShotgunDamageRounding_Standard>
+    <ProperShotguns.ShotgunDamageRounding_Standard_Desc>Pellet damage will follow standard rounding rules - down if decimal value is less than 0.5, otherwise up.</ProperShotguns.ShotgunDamageRounding_Standard_Desc>
+    <ProperShotguns.ShotgunDamageRounding_Floor>Down</ProperShotguns.ShotgunDamageRounding_Floor>
+    <ProperShotguns.ShotgunDamageRounding_Floor_Desc>Pellet damage will always be rounded down.</ProperShotguns.ShotgunDamageRounding_Floor_Desc>
+    <ProperShotguns.ShotgunDamageRounding_Ceil>Up</ProperShotguns.ShotgunDamageRounding_Ceil>
+    <ProperShotguns.ShotgunDamageRounding_Ceil_Desc>Pellet damage will always be rounded up.</ProperShotguns.ShotgunDamageRounding_Ceil_Desc>
 
 </LanguageData>

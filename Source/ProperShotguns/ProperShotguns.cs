@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HarmonyLib;
+using System;
 using UnityEngine;
 using Verse;
 
@@ -8,19 +9,22 @@ namespace ProperShotguns
 	{
 		public ProperShotguns(ModContentPack content) : base(content)
 		{
-			base.GetSettings<ProperShotgunsSettings>();
+			harmonyInstance = new Harmony("XeoNovaDan.ProperShotguns");
+			settings = GetSettings<ProperShotgunsSettings>();
 		}
 
 		public override string SettingsCategory()
 		{
-			return Translator.Translate("ProperShotgunsSettingsCategory");
+			return "ProperShotguns.SettingsCategory".Translate();
 		}
 
 		public override void DoSettingsWindowContents(Rect inRect)
 		{
-			base.GetSettings<ProperShotgunsSettings>().DoWindowContents(inRect);
+			settings.DoWindowContents(inRect);
 		}
 
-		public ProperShotgunsSettings settings;
+		public static Harmony harmonyInstance;
+		public static ProperShotgunsSettings settings;
+
 	}
 }
